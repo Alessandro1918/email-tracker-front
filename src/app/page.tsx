@@ -12,13 +12,13 @@ export default function Home() {
   const [ isPixelVisible, setIsPixelVisible ] = useState(false)   //Hide pixel everytime any input changes. Else, every character typed will trigger the backend
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between p-24 space-y-4">
       
       <p>Email:</p>
       <div>
         <label>ID:</label>
         <input 
-          className="text-black"
+          className="text-black w-24 ml-1 pl-1"
           type="text" 
           placeholder="Ex: 1234"
           value={emailId}
@@ -33,7 +33,7 @@ export default function Home() {
       <div>
         <label>Destinatário:</label>
         <input 
-          className="text-black"
+          className="text-black w-56 ml-1 pl-1"
           type="text" 
           placeholder="Ex: ale@gmail.com"
           value={emailRecipient}
@@ -48,7 +48,7 @@ export default function Home() {
       <div>
         <label>Assunto:</label>
         <input 
-          className="text-black"
+          className="text-black w-64 ml-1 pl-1"
           type="text" 
           placeholder="Ex: Status Report - Week 42"
           value={emailSubject}
@@ -67,6 +67,7 @@ export default function Home() {
             <p>{"Tracking pixel: ("}</p>
             <Image
               // className="dark:invert"
+              className="m-1"
               // src="/vercel.svg"
               // src={`${emailId}`}
               src={`${BACK_URL}/track?id=${emailId}&recipient=${emailRecipient}&subject=${emailSubject}`}
@@ -79,6 +80,7 @@ export default function Home() {
           </div>
         :
           <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={() => setIsPixelVisible(true)}
           >
             Visualizar pixel
