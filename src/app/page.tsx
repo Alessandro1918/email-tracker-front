@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export default function Home() {
 
@@ -65,7 +65,8 @@ export default function Home() {
         ?
           <div className="items-center justify-between lg:flex">
             <p>{"Tracking pixel: ("}</p>
-            <Image
+            {/* <Image */}
+            <img
               // className="dark:invert"
               className="m-1"
               // src="/vercel.svg"
@@ -74,7 +75,7 @@ export default function Home() {
               alt="Vercel Logo"
               width={2}
               height={2}
-              priority
+              // priority
             />
             <p>{")"}</p>
           </div>
